@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<hibernate-configuration>
+  <session-factory>
+    <!-- Disable the second-level cache -->
+    <!--<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>-->
+    <!-- Mapping files -->
+    <property name="hibernate.query.factory_class">org.hibernate.hql.internal.classic.ClassicQueryTranslatorFactory</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sakila</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">M@c12345</property>
+    <property name="hibernate.connection.pool_size">1</property>
+    <mapping resource="mvcdemo/Language.hbm.xml"/>
+    <mapping resource="mvcdemo/FilmActor.hbm.xml"/>
+    <mapping resource="mvcdemo/Actor.hbm.xml"/>
+    <mapping resource="mvcdemo/Film.hbm.xml"/>
+    <mapping resource="mvcdemo/Category.hbm.xml"/>
+    <mapping resource="mvcdemo/FilmCategory.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

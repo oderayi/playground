@@ -1,0 +1,30 @@
+<h2>{{title_editor.value || "My Heroes" }}</h2>
+
+<input #title_editor (keyup)="0" placeholder="page title">
+
+<p myHighlight>This paragraph uses the HighlightDirective</p>
+    
+<ul class="heroes">
+    <li *ngFor="let hero of heroes" 
+        [class.selected]="hero == selectedHero" 
+        (click)="onSelect(hero)" 
+        @heroState="hero.state">
+        <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+        <button class="delete-button" (click)="delete(hero, $event)">Delete</button>
+        <button class="state-button" (click)="log(hero)">Change State</button>
+    </li>
+</ul>
+
+<p *ngIf="heroes && heroes.length > 3">There are many Heroes</p>
+
+<button (click)="addHero()">Add New Hero</button>
+
+<div *ngIf="addingHero">
+    <hero-detail (close)="close($event)"></hero-detail>
+</div>
+
+<div *ngIf="selectedHero">
+    <h2>{{ selectedHero.name | uppercase }} is my hero.</h2>
+    <button (click)="gotoDetail()">View Details</button>
+</div>
+

@@ -1,0 +1,81 @@
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" type="text/javascript"></script>
+	<style type="text/css">
+	.tail {
+  animation-name: tailWag;
+  animation-timing-function: steps(5);
+  animation-duration: .5s;
+  /* Try using the non-default values here */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: paused;
+}
+
+.tail:hover {
+  animation-play-state: running;
+}
+
+/* Nothing else needed! */
+.window {
+  background: url("img/tuna-window.png") no-repeat 0 0;
+  background-size: 100% auto;
+  padding-top: 81.38%;
+}
+
+.tail {
+  background: url(img/tuna-tails.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 40%;
+  padding-top: 18.63%;
+  position: absolute;
+  top: 75%;
+  left: 16%;
+}
+
+/* The magical formula for making steps() perfectly work is 
+
+percentage($height / ($height - ($height / $steps)))
+
+So 
+1375 / (1375 - (1375 / 5)) * 100%;
+1375 / (1375 - 275) * 100%;
+1375 / 1100 * 100%;
+1.25 * 100%
+125%
+
+Nootch.
+
+*/
+@keyframes tailWag {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 125%; }
+}
+
+body {  background: #c0c0c0;
+}
+
+.stage { 
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%
+}
+
+	
+</style>
+
+<script>
+	$(window).ready(function(){
+		$('.tuna').addClass('walk');
+	});
+</script>
+</head>
+<body>
+	<div class="stage">
+		<div class="window">
+			<div class="tail"></div>
+		</div>
+	</div>
+</body>
+</html>

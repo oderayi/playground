@@ -1,0 +1,9 @@
+<!-- user-form.component.html -->
+  <form role="form" #form ="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <input type="text" placeholder="Enter your name" ngControl="name">
+    <input type="text" placeholder="Enter your email" ngControl="email">
+    <input type="checkbox" ngControl="javascript">JavaScript
+    <input type="checkbox" ngControl="ruby">Ruby
+    <input type="checkbox" ngControl="php">PHP
+    <button>Submit</button>
+  </form>

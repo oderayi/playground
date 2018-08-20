@@ -1,0 +1,7 @@
+C:\c#\myFsharp\bin\Debug\netcoreapp2.0\myFsharp.deps.json
+C:\c#\myFsharp\bin\Debug\netcoreapp2.0\myFsharp.runtimeconfig.json
+C:\c#\myFsharp\bin\Debug\netcoreapp2.0\myFsharp.runtimeconfig.dev.json
+C:\c#\myFsharp\bin\Debug\netcoreapp2.0\myFsharp.dll
+C:\c#\myFsharp\bin\Debug\netcoreapp2.0\myFsharp.pdb
+C:\c#\myFsharp\obj\Debug\netcoreapp2.0\myFsharp.dll
+C:\c#\myFsharp\obj\Debug\netcoreapp2.0\myFsharp.pdb

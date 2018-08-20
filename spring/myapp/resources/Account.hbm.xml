@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="myapp.model.Account" table="ACCOUNT">
+		<id name="accountId" column="ACCOUNT_ID">
+			<generator class="sequence-identity">
+				<param name="sequence">ACCOUNT_SEQ</param>
+			</generator>
+		</id>
+		<property name="creationDate" column="CREATION_DATE" type="timestamp"
+			update="false" />
+		<property name="accountType" column="ACCOUNT_TYPE" type="string"
+			update="false" />
+		<property name="balance" column="BALANCE" type="double" />
+	</class>
+</hibernate-mapping>
